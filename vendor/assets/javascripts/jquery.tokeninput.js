@@ -252,14 +252,16 @@ $.TokenList = function (input, url_or_data, settings) {
             token_list.addClass($(input).data("settings").classes.focused);
         })
         .blur(function () {
-            hide_dropdown();
-
-            if ($(input).data("settings").allowFreeTagging) {
-              add_freetagging_tokens();
-            }
-
-            $(this).val("");
-            token_list.removeClass($(input).data("settings").classes.focused);
+            setTimeout(function () {
+                hide_dropdown();
+    
+                if ($(input).data("settings").allowFreeTagging) {
+                  add_freetagging_tokens();
+                }
+    
+                $(this).val("");
+                token_list.removeClass($(input).data("settings").classes.focused);
+            }, 5);
         })
         .bind("keyup keydown blur update", resize_input)
         .keydown(function (event) {
