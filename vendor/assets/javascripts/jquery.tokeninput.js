@@ -261,7 +261,7 @@ $.TokenList = function (input, url_or_data, settings) {
     
                 $(this).val("");
                 token_list.removeClass($(input).data("settings").classes.focused);
-            }, 5);
+            }, 150);
         })
         .bind("keyup keydown blur update", resize_input)
         .keydown(function (event) {
